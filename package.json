@@ -1,0 +1,31 @@
+{
+  "name": "goodvibes_frontend",
+  "version": "1.0.0",
+  "description": "This project is based on salon website",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anulmehta48/GoodVibes_Frontend.git"
+  },
+  "author": "chanchal sen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anulmehta48/GoodVibes_Frontend/issues"
+  },
+  "homepage": "https://github.com/anulmehta48/GoodVibes_Frontend#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "postcss": "^8.4.32",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.0"
+  }
+  
+}
