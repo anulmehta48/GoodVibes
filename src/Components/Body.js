@@ -1,7 +1,10 @@
+import ImageCrousel from "./Crousel";
+
 const Body = () => {
   return (
-    <div className=" h-72">
-      <h1>Body</h1>
+    <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+      <h1 className="text-9xl text-red-600">Body section</h1>
+      <ImageCrousel/>
     </div>
   );
 };

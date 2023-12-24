@@ -19,7 +19,8 @@
   "homepage": "https://github.com/anulmehta48/GoodVibes_Frontend#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1"
   },
   "devDependencies": {
     "parcel": "^2.10.3",
@@ -27,5 +28,4 @@
     "process": "^0.11.10",
     "tailwindcss": "^3.4.0"
   }
-  
 }
