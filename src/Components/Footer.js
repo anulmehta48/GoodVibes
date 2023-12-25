@@ -16,9 +16,12 @@ const Footer = () => {
           </div>
           <div className="w-[500px] h-[200px]">
             <h3>Contact Us</h3>
-            <p>Phone: +1 (123) 456-7890</p>
-            <p>Email: info@yoursalon.com</p>
-            <p>Address: 123 Street, Cityville, Country</p>
+            <p>Phone: (+91) 9024073844</p>
+            <p>Email: shymakanu262@gmail.com</p>
+            <p>
+              Address: House No. 34, Infront of PNB Bank, Opera road, Mahaveer
+              Nagar-II, Indra Vihar, Mahaveer Nagar, Kota, Rajasthan 324005
+            </p>
           </div>
         </div>
         <div>

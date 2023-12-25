@@ -3,11 +3,11 @@ import Logo from "../public/logo_gv.jpg";
 const Header = () => {
   return (
     <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-      <div className="flex justify-between bg-red-300  shadow-lg container mx-auto">
+      <div className="flex justify-between bg-red-300  shadow-lg  mx-auto">
         <a href="/">
-          <img className="h-20 rounded-full ml-16 p-2" alt="logo" src={Logo} />
+          <img className="h-20 rounded-full ml-5 p-2" alt="logo" src={Logo} />
         </a>
-        <div className="navbar">
+        <div className="mr-4">
           <ul className="flex py-6 ">
             <li className="px-4">
               <Link to="/">Home</Link>

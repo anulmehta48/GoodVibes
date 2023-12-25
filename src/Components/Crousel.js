@@ -1,11 +1,10 @@
-import { useState } from "react";
-import logo from "../public/logo_gv.jpg";
-const data = [
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNipdOnjoiA2PWjuNcxsfBtrh4LaRQq-EmIdKeu59vHw&s",
-  "https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg",
-  "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
-  "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_640.jpg",
-];
+import { useEffect, useState } from "react";
+// import logo from "../public/logo_gv.jpg";
+import image1 from "../public/image-1.jpg";
+import image2 from "../public/image-2.jpg";
+import image5 from "../public/image-5.jpg";
+import image4 from "../public/image-4.jpg";
+const data = [image1, image2, image4, image5];
 
 const ImageCrousel = () => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -17,20 +16,29 @@ const ImageCrousel = () => {
       setActiveImageIndex(activeImageIndex - 1);
     }
   };
-
   const handleNextClick = () => {
     setActiveImageIndex((activeImageIndex + 1) % data.length);
   };
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      handleNextClick();
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [activeImageIndex]);
+
   return (
-    <div className="flex justify-center">
-      <button className="font-bold p-4 m-10" onClick={hangePreviousClick}>
-        Previous
-      </button>
-      <img className="w-[700px] " src={data[activeImageIndex]} alt="png" />
-      <button className="font-bold p-4 m-10" onClick={handleNextClick}>
-        Next
-      </button>
+    <div className="relative w-full h-96 overflow-hidden">
+      <img
+        className="w-full h-full object-cover transition-transform transform scale-105 duration-500"
+        src={data[activeImageIndex]}
+        alt="png"
+      />
+      <div className="absolute inset-0 flex items-center justify-between">
+        <button onClick={hangePreviousClick}></button>
+        <button onClick={handleNextClick}></button>
+      </div>
     </div>
   );
 };
