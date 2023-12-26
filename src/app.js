@@ -13,7 +13,7 @@ import Signup from "./Components/Signup";
 const AppLayout = () => {
   return (
     <>
-      <div className="bg-red-300 h-full bg-repeat max-w-[1800px] mx-auto" >
+      <div className="">
         <Header />
         <Outlet />
         <Footer />
