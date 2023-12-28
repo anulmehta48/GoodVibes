@@ -13,11 +13,9 @@ import Signup from "./Components/Signup";
 const AppLayout = () => {
   return (
     <>
-      <div className="">
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   );
 };

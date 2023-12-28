@@ -2,35 +2,38 @@ import { Link } from "react-router-dom";
 import Logo from "../public/logo_gv.jpg";
 const Header = () => {
   return (
-    <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-      <div className="flex justify-between bg-red-300  shadow-lg  mx-auto">
-        <a href="/">
-          <img className="h-20 rounded-full ml-5 p-2" alt="logo" src={Logo} />
-        </a>
-        <div className="mr-4">
-          <ul className="flex py-6 ">
-            <li className="px-4">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="px-4">
-              <Link to="/about">About</Link>
-            </li>
-            <li className="px-4">
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li className="px-4">
-              <Link to="/booking">Booking</Link>
-            </li>
-            <button className="px-4">
-              <Link to="/login">Login</Link>
-            </button>
-            <button className="px-4">
-              <Link to="/signup">Signup</Link>
-            </button>
-          </ul>
-        </div>
+    <header className="flex justify-between items-center text-white">
+      <a href="/" className="flex items-center">
+        <img className="h-16 rounded-full" alt="logo" src={Logo} />
+      </a>
+      <ul className="hidden lg:flex lg:items-center lg:gap-10 lg:text-lg lg:font-medium ">
+        <li className="px-4 hover:text-lime-600">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="px-4 hover:text-lime-600">
+          <Link to="/about">About</Link>
+        </li>
+        <li className="px-4 hover:text-lime-600">
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li className="px-4 hover:text-lime-600 ">
+          <Link to="/booking">Booking</Link>
+        </li>
+      </ul>
+      <div className="hidden lg:flex lg:items-center lg:gap-10 lg:text-lg lg:font-medium  ">
+        <Link to="/login" className="px-4 hover:text-lime-600">
+          Login
+        </Link>
+        <Link to="/signup">
+          <button className="bg-purple-900 px-2 py-1 font-medium rounded-md hover:bg-lime-500 hover:text-black">
+            Register
+          </button>
+        </Link>
       </div>
-    </div>
+      <div className="lg:hidden">
+        <i className="fa-solid fa-bars fa-2x"></i>
+      </div>
+    </header>
   );
 };
 
