@@ -20,13 +20,13 @@ const ImageCrousel = () => {
     setActiveImageIndex((activeImageIndex + 1) % data.length);
   };
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     handleNextClick();
-  //   }, 3000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      handleNextClick();
+    }, 3000);
 
-  //   return () => clearInterval(intervalId);
-  // }, [activeImageIndex]);
+    return () => clearInterval(intervalId);
+  }, [activeImageIndex]);
 
   return (
     <div className="mt-3 relative w-full h-96 rounded-full overflow-hidden outline outline-white shadow-2xl shadow-black lg:h-[550px] lg:w-[550px] lg:rounded-full">

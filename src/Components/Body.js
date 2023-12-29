@@ -3,6 +3,7 @@ import image1 from "../public/image-1.jpg";
 import image2 from "../public/image-2.jpg";
 import image5 from "../public/image-5.jpg";
 import image4 from "../public/image-4.jpg";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   return (
@@ -21,7 +22,7 @@ const Body = () => {
         </p>
         <div className="flex flex-col gap-2 md:flex-row md:gap-0 justify-center">
           <button className="hover:bg-lime-600 hover:text-black bg-purple-900 px-4 py-3 max-md:rounded-md md:rounded-md text-white rounded-r-md font-medium whitespace-nowrap">
-            Book Now
+            <Link to="/booking"> Book Now </Link>
           </button>
         </div>
         <div className="flex flex-col gap-4 items-center">
@@ -29,15 +30,22 @@ const Body = () => {
             GoodVibes Hair Studio
           </p>
           <ul className="flex gap-6">
-            <li>
-              <i className="fa-brands fa-instagram fa-2x"></i>
-            </li>
+            <Link
+              to="https://www.instagram.com/goodvibes_hairstudio?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA=="
+              target="_blank"
+            >
+              <li>
+                <i className="fa-brands fa-instagram fa-2x"></i>
+              </li>
+            </Link>
             <li>
               <i className="fa-brands fa-facebook fa-2x"></i>
             </li>
-            <li>
-              <i className="fa-brands fa-youtube fa-2x"></i>
-            </li>
+            <Link to="https://youtube.com/@princeprofessionalsalon1151?si=ZG5MxkQz8wpLbLZ5" target="_blank">
+              <li>
+                <i className="fa-brands fa-youtube fa-2x"></i>
+              </li>
+            </Link>
           </ul>
         </div>
         {/* <div className="flex item-center justify-center gap-10 bg-slate-400 w-[300px] h-[300px]">
