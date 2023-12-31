@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="flex flex-col gap-5 py-8">
+    <div className="flex flex-col gap-5 py-8 font-bold">
       <div className="flex justify-between ">
         {/* <iframe
           className=""

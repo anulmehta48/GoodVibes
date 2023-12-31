@@ -41,7 +41,10 @@ const Body = () => {
             <li>
               <i className="fa-brands fa-facebook fa-2x"></i>
             </li>
-            <Link to="https://youtube.com/@princeprofessionalsalon1151?si=ZG5MxkQz8wpLbLZ5" target="_blank">
+            <Link
+              to="https://youtube.com/@princeprofessionalsalon1151?si=ZG5MxkQz8wpLbLZ5"
+              target="_blank"
+            >
               <li>
                 <i className="fa-brands fa-youtube fa-2x"></i>
               </li>

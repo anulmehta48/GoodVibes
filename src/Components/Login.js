@@ -40,7 +40,7 @@ const Login = () => {
                 Sign up
               </Link>
             </p>
-            <p>
+            {/* <p>
               Forget password{" "}
               <Link
                 to="/reset"
@@ -48,7 +48,7 @@ const Login = () => {
               >
                 Reset password
               </Link>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
