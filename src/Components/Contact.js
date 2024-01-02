@@ -27,7 +27,7 @@ const Contact = () => {
   };
   return (
     <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-      <h1 className="text-9xl text-red-600">Contact Section</h1>
+      <h1 className="text-7xl text-red-600">Contact Section</h1>
       <button onClick={notify}>Notify !</button>
         <ToastContainer />
     </div>

@@ -9,6 +9,7 @@ import Contact from "./Components/Contact";
 import Booking from "./Components/Booking";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
+import DailyEntry from "./Components/DailyEntry";
 
 const AppLayout = () => {
   return (
@@ -49,6 +50,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/entry",
+        element: <DailyEntry />,
       },
     ],
   },
