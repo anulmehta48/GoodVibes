@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,11 +11,58 @@ const Booking = () => {
   const [number, setNumber] = useState("");
   const [services, setServices] = useState("");
   const [notes, setNotes] = useState("");
-  const [popupMessage, setPopupMessage] = useState(null);
+  const navigate = useNavigate();
+
+  const resetForm = () => {
+    setDate("");
+    setTime("");
+    setFullName("");
+    seTEmail("");
+    setNumber("");
+    setServices("");
+    setNotes("");
+  };
+
+  const validateForm = () => {
+    if (!date || !time || !fullname || !email || !number || !services) {
+      toast.error("Please fill in all required fields");
+      return false;
+    }
+
+    const timeRegex = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+    if (!timeRegex.test(time)) {
+      toast.error("Please enter a valid time format (HH:mm)");
+      return false;
+    }
+
+    if (fullname.length < 4) {
+      toast.error("Full name should be at least 4 characters");
+      return false;
+    }
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return false;
+    }
+
+    // Validate mobile number (assuming a valid number is a 10-digit number)
+    if (!/^\d{10}$/.test(number)) {
+      toast.error("Please enter a valid 10-digit mobile number");
+      return false;
+    }
+
+    // Additional validation checks if needed
+    return true;
+  };
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
     console.log({ date, time, fullname, email, number, services, notes });
+
+    if (!validateForm()) {
+      return;
+    }
     try {
       const response = await fetch("http://localhost:3000/appointment", {
         method: "POST",
@@ -36,10 +83,8 @@ const Booking = () => {
       if (response.ok) {
         const responseData = await response.json();
         console.log(responseData);
-        toast.success("Your Booking has been successfully", {
-          position: toast.POSITION.TOP_CENTER,
-        })
-        ;
+        toast.success("Your Booking has been successfully");
+        resetForm();
       } else {
         const errorData = await response.json();
         toast.error(` ${errorData.message}`);
@@ -69,7 +114,7 @@ const Booking = () => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 required
-                className="w-60 bg-white-light px-12 py-2 rounded-full focus:bg-black focus:outline-none focus:ring-1 focus:ring-purple-500 focus:drop-shadow-lg"
+                className="w-60 easy-click bg-white-light px-12 py-2 rounded-full focus:bg-black focus:outline-none focus:ring-1 focus:ring-purple-500 focus:drop-shadow-lg"
               />
             </div>
             <div className="relative">
@@ -167,7 +212,7 @@ const Booking = () => {
             >
               Book Now
             </button>
-            <ToastContainer/>
+            <ToastContainer />
           </form>
           <div className="text-white border-t border-white-light pt-3 space-y-1 text-sm">
             <p>
