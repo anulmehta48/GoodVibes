@@ -11,6 +11,7 @@ const Booking = () => {
   const [number, setNumber] = useState("");
   const [services, setServices] = useState("");
   const [notes, setNotes] = useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const navigate = useNavigate();
 
   const resetForm = () => {
@@ -59,10 +60,11 @@ const Booking = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     console.log({ date, time, fullname, email, number, services, notes });
-
+    
     if (!validateForm()) {
       return;
     }
+    setIsButtonDisabled(true);
     try {
       const response = await fetch("http://localhost:3000/appointment", {
         method: "POST",
@@ -91,6 +93,8 @@ const Booking = () => {
       }
     } catch (error) {
       toast.error(`${error.message}`);
+    }finally{
+      setIsButtonDisabled(false);
     }
   };
 
@@ -108,7 +112,7 @@ const Booking = () => {
               </div>
               <input
                 type="date"
-                placeholder="Date"
+                placeholder="Select a date"
                 min="2023-12-31"
                 name="date"
                 value={date}
@@ -207,6 +211,8 @@ const Booking = () => {
               />
             </div>
             <button
+            onClick={HandleSubmit}
+            disabled={isButtonDisabled}
               type="submit"
               className="bg-gradient-to-r from-cyan-200 to-indigo-600 w-60 font-semibold rounded-full px-3 py-2"
             >
