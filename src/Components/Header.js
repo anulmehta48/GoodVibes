@@ -20,7 +20,7 @@ const Header = () => {
           <Link to="/booking">Booking</Link>
         </li>
       </ul>
-      {/* <div className="hidden lg:flex lg:items-center lg:gap-5 lg:text-lg lg:font-medium  ">
+      <div className="hidden lg:flex lg:items-center lg:gap-5 lg:text-lg lg:font-medium  ">
         <Link to="/login">
           <button className="bg-purple-900 px-2 py-1 font-medium rounded-md hover:bg-lime-500 hover:text-black">
             Login
@@ -31,7 +31,7 @@ const Header = () => {
             Register
           </button>
         </Link>
-      </div> */}
+      </div>
     </header>
   );
 };

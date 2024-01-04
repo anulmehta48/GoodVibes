@@ -2,28 +2,28 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
   const notify = () => {
-    toast("Default Notification !");
+    // toast("Default Notification !");
 
-    toast.success("Success Notification !", {
+    toast.success("message send successfully !", {
       position: toast.POSITION.TOP_CENTER,
     });
 
-    toast.error("Error Notification !", {
-      position: toast.POSITION.TOP_LEFT,
-    });
+    // toast.error("Error Notification !", {
+    //   position: toast.POSITION.TOP_LEFT,
+    // });
 
-    toast.warn("Warning Notification !", {
-      position: toast.POSITION.BOTTOM_LEFT,
-    });
+    // toast.warn("Warning Notification !", {
+    //   position: toast.POSITION.BOTTOM_LEFT,
+    // });
 
-    toast.info("Info Notification !", {
-      position: toast.POSITION.BOTTOM_CENTER,
-    });
+    // toast.info("Info Notification !", {
+    //   position: toast.POSITION.BOTTOM_CENTER,
+    // });
 
-    toast("Custom Style Notification with css class!", {
-      position: toast.POSITION.BOTTOM_RIGHT,
-      className: "foo-bar",
-    });
+    // toast("Custom Style Notification with css class!", {
+    //   position: toast.POSITION.BOTTOM_RIGHT,
+    //   className: "foo-bar",
+    // });
   };
   return (
     <div class="relative flex items-top justify-center min-h-screen bg-white dark:bg-slate-500 sm:items-center sm:pt-0">
@@ -122,7 +122,7 @@ const Contact = () => {
                   name="name"
                   id="name"
                   placeholder="Full Name"
-                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-balck font-semibold focus:border-indigo-500 focus:outline-none"
                 />
               </div>
 
@@ -135,7 +135,7 @@ const Contact = () => {
                   name="email"
                   id="email"
                   placeholder="Email"
-                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-balck  font-semibold focus:border-indigo-500 focus:outline-none"
                 />
               </div>
 
@@ -148,16 +148,18 @@ const Contact = () => {
                   name="text"
                   id="text"
                   placeholder="Write your query"
-                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-balck  font-semibold focus:border-indigo-500 focus:outline-none"
                 />
               </div>
 
               <button
+              onClick={notify}
                 type="submit"
                 class="md:w-32 bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300"
               >
                 Submit
               </button>
+              <ToastContainer/>
             </form>
           </div>
         </div>

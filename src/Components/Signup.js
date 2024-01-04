@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 const Signup = () => {
+  
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="max-w-[860px] bg-slate-500 grid items-center p-16 md:p20 rounded-3xl">
