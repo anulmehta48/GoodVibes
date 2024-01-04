@@ -26,7 +26,7 @@ const Booking = () => {
 
   const validateForm = () => {
     if (!date || !time || !fullname || !email || !number || !services) {
-      toast.error("Please fill in all required fields");
+      toast.error("Please fill in all required details");
       return false;
     }
 
@@ -60,7 +60,7 @@ const Booking = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     console.log({ date, time, fullname, email, number, services, notes });
-    
+
     if (!validateForm()) {
       return;
     }
@@ -93,16 +93,16 @@ const Booking = () => {
       }
     } catch (error) {
       toast.error(`${error.message}`);
-    }finally{
+    } finally {
       setIsButtonDisabled(false);
     }
   };
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="max-w-[860px] bg-slate-500 grid items-center p-14  md:p-10 rounded-3xl">
-        <div className="max-w-80 grid gap-5">
-          <h1 className="text-5xl font-bold text-white flex justify-center items-center">
+      <div className=" bg-slate-500 grid items-center p-14  md:p-10 rounded-3xl">
+        <div className="max-w-96  gap-5">
+          <h1 className="text-2xl font-bold text-white flex justify-center items-center">
             Booking
           </h1>
           <form className="space-y-6 text-white" onSubmit={HandleSubmit}>
@@ -194,7 +194,7 @@ const Booking = () => {
                 <option>HairCut</option>
                 <option>BeardCut</option>
                 <option>Facial</option>
-                <option>Steaming</option>
+                <option>Steam</option>
               </select>
             </div>
             <div className="relative">
@@ -211,8 +211,8 @@ const Booking = () => {
               />
             </div>
             <button
-            onClick={HandleSubmit}
-            disabled={isButtonDisabled}
+              onClick={HandleSubmit}
+              disabled={isButtonDisabled}
               type="submit"
               className="bg-gradient-to-r from-cyan-200 to-indigo-600 w-60 font-semibold rounded-full px-3 py-2"
             >
