@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer class="bg-blue-100/80 font-sans dark:bg-slate-500 mt-20">
-      <div class="container px-6 py-12 mx-auto">
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
-          <div class="sm:col-span-2">
+    <footer className="bg-blue-100/80 font-sans dark:bg-slate-500 mt-20">
+      <div className="container px-6 py-12 mx-auto">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
+          <div className="sm:col-span-2">
             <iframe
               className="w-[322px] h-[250px] md:w-[660px]"
               title="Salon Location"

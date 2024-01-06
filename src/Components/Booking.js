@@ -66,7 +66,7 @@ const Booking = () => {
     }
     setIsButtonDisabled(true);
     try {
-      const response = await fetch("http://localhost:3000/appointment", {
+      const response = await fetch("https://goodvibes-backend.onrender.com/appointment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -211,7 +211,6 @@ const Booking = () => {
               />
             </div>
             <button
-              onClick={HandleSubmit}
               disabled={isButtonDisabled}
               type="submit"
               className="bg-gradient-to-r from-cyan-200 to-indigo-600 w-60 font-semibold rounded-full px-3 py-2"
