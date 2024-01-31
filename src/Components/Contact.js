@@ -1,32 +1,23 @@
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
-  const notify = () => {
-    // toast("Default Notification !");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [query, setQuery] = useState("");
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+    toast.success("Thank you for your submission!");
+    ResetForm();
+  };
 
-    toast.success("message send successfully !", {
-      position: toast.POSITION.TOP_CENTER,
-    });
-
-    // toast.error("Error Notification !", {
-    //   position: toast.POSITION.TOP_LEFT,
-    // });
-
-    // toast.warn("Warning Notification !", {
-    //   position: toast.POSITION.BOTTOM_LEFT,
-    // });
-
-    // toast.info("Info Notification !", {
-    //   position: toast.POSITION.BOTTOM_CENTER,
-    // });
-
-    // toast("Custom Style Notification with css className!", {
-    //   position: toast.POSITION.BOTTOM_RIGHT,
-    //   classNameName: "foo-bar",
-    // });
+  const ResetForm = () => {
+    setFullName("");
+    setEmail("");
+    setQuery("");
   };
   return (
-    <div className="relative flex items-top justify-center min-h-screen bg-white dark:bg-slate-500 sm:items-center sm:pt-0">
+    <div className="relative mt-5 flex items-top justify-center min-h-screen bg-white dark:bg-slate-500 sm:items-center sm:pt-0">
       <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
         <div className="mt-8 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
@@ -112,54 +103,59 @@ const Contact = () => {
               </div>
             </div>
 
-            <form className="p-6 flex flex-col justify-center">
-              <div className="flex flex-col">
+            <form
+              onSubmit={HandleSubmit}
+              className="p-6 flex flex-col justify-center"
+            >
+              <div className="flex flex-col ">
                 <label htmlFor="name" className="hidden">
                   Full Name
                 </label>
                 <input
-                  type="name"
-                  name="name"
-                  id="name"
+                  required
+                  type="text"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   placeholder="Full Name"
-                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-balck font-semibold focus:border-indigo-500 focus:outline-none"
+                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-balck dark:text-white  font-semibold focus:border-indigo-500 focus:outline-none"
                 />
               </div>
 
-              <div className="flex flex-col mt-2">
+              <div className="flex flex-col mt-5">
                 <label htmlFor="email" className="hidden">
                   Email
                 </label>
                 <input
+                  required
                   type="email"
-                  name="email"
-                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
-                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-balck  font-semibold focus:border-indigo-500 focus:outline-none"
+                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-balck dark:text-white  font-semibold focus:border-indigo-500 focus:outline-none"
                 />
               </div>
 
-              <div className="flex flex-col mt-2">
+              <div className="flex flex-col mt-5">
                 <label htmlFor="tel" className="hidden">
-                 Query
+                  Query
                 </label>
                 <textarea
+                  required
                   type="text"
-                  name="text"
-                  id="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
                   placeholder="Write your query"
-                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-balck  font-semibold focus:border-indigo-500 focus:outline-none"
+                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-balck dark:text-white font-semibold focus:border-indigo-500 focus:outline-none"
                 />
               </div>
 
               <button
-              onClick={notify}
                 type="submit"
-                className="md:w-32 bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300"
+                className="md:w-32 bg-purple-900 mt-5 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg  hover:bg-lime-500 transition ease-in-out duration-300"
               >
                 Submit
               </button>
-              <ToastContainer/>
+              <ToastContainer />
             </form>
           </div>
         </div>

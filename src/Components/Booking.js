@@ -13,6 +13,8 @@ const Booking = () => {
   const [notes, setNotes] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const navigate = useNavigate();
+  const currentDate = new Date();
+  const formattedCurrentDate = currentDate.toISOString().split("T")[0];
 
   const resetForm = () => {
     setDate("");
@@ -66,21 +68,24 @@ const Booking = () => {
     }
     setIsButtonDisabled(true);
     try {
-      const response = await fetch("https://goodvibes-backend.onrender.com/appointment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          appointDate: date,
-          appointTime: time,
-          fullName: fullname,
-          email: email,
-          mobile: number,
-          services: services,
-          notes: notes,
-        }),
-      });
+      const response = await fetch(
+        "https://goodvibes-backend.onrender.com/appointment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            appointDate: date,
+            appointTime: time,
+            fullName: fullname,
+            email: email,
+            mobile: number,
+            services: services,
+            notes: notes,
+          }),
+        }
+      );
 
       if (response.ok) {
         const responseData = await response.json();
@@ -113,7 +118,7 @@ const Booking = () => {
               <input
                 type="date"
                 placeholder="Select a date"
-                min="2023-12-31"
+                min={formattedCurrentDate}
                 name="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}

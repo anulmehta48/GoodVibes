@@ -1,8 +1,6 @@
 import ImageCrousel from "./Crousel";
 import { Link } from "react-router-dom";
-import image1 from "../public/image-1.jpg";
-import image2 from "../public/image-2.jpg";
-import image5 from "../public/image-5.jpg";
+
 const Body = () => {
   return (
     <div>
